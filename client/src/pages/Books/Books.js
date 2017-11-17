@@ -28,7 +28,7 @@ class Books extends Component {
     console.log("New Book:", newBook)
 
     API.saveBook(newBook)
-      .then( this.loadBooks())
+      .then( res => this.loadBooks() )
   };
 
   handleInputChange = event => {
@@ -53,10 +53,9 @@ class Books extends Component {
   };
 
   deleteBook = (event) => {
-    
     const deleteId = event.target.id;
     API.deleteBook(deleteId)
-      .then( this.loadBooks() );
+      .then( res => this.loadBooks() );
   }
 
   render() {
